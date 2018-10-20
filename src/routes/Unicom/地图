@@ -1,0 +1,84 @@
+// import React, { Fragment } from 'react';
+// //在地图组件中import BMap，否则会出现"BMap undefined"；还有这个BMap_Symbol_SHAPE_POINT，因为是用“_”连字符
+// import BMap from 'BMap';
+// //import BMapSymbolSHAPEPOINT from 'BMap_Symbol_SHAPE_POINT';
+// import $ from 'jquery';
+// import ReactEcharts from 'echarts-for-react';
+// //引入echarts主模块
+// import echarts from 'echarts/lib/echarts';
+// //引入柱状图
+// import 'echarts/lib/chart/heatmap';
+// //引入标题和提示框
+// import 'echarts/lib/component/tooltip';
+// import 'echarts/lib/component/title';
+// //引入图表卡片
+// import {ChartCard} from '../../components/Charts';
+// //import {data} from './data1.json';
+// import data from './data.json';
+
+
+
+// export default class Zhizhu extends React.Component {
+
+//   constructor(props) {
+//     super(props);
+//   }
+//   componentDidMount=()=> {
+//   	var dom = document.getElementById("container");
+//   	var myChart = echarts.init(dom);
+//   	var app = {};
+//   	app.title = '热力图与百度地图扩展';
+// 	// $.get('http://www.echartsjs.com/examples/data/asset/data/hangzhou-tracks.json', function (data) {
+// 		//var data = data.broadBandHotData;
+// 		console.log(data);
+// 		var points = [].concat.apply([], data.map(function (track) {
+// 	                  return track.map(function (seg) {
+// 	                      return seg.coord.concat([1]);
+// 	                  });
+// 	              }));
+// 	  	let option = {
+// 	                  animation: false,
+// 	                  bmap: {
+// 	                      center: [108.962783, 34.360491],
+// 	                      zoom: 12,
+// 	                      roam: true
+// 	                  },
+// 	                  visualMap: {
+// 	                      show: false,
+// 	                      top: 'top',
+// 	                      min: 0,
+// 	                      max: 5,
+// 	                      seriesIndex: 0,
+// 	                      calculable: true,
+// 	                      inRange: {
+// 	                          color: ['blue', 'blue', 'green', 'yellow', 'red']
+// 	                      }
+// 	                  },
+// 	                  series: [{
+// 	                      type: 'heatmap',
+// 	                      coordinateSystem: 'bmap',
+// 	                      data: points,
+// 	                      pointSize: 20,
+// 	                      blurSize: 5
+// 	                  }]
+// 	              };
+	  	
+// 	  	myChart.setOption(option);
+// 	  	if (!app.inNode) {
+// 	        var bmap = myChart.getModel().getComponent('bmap').getBMap();
+// 	        bmap.addControl(new BMap.MapTypeControl());
+// 	    }
+// 	// });
+//     // if (option && typeof option === "object") {
+//     //     myChart.setOption(option, true);
+//     // }
+// }
+
+//   render() {
+//     return (
+            	
+//             <div id="container" style={{width:'80%',height:600}}></div>
+    
+//     );
+//   }
+// }
