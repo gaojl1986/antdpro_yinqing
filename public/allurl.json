@@ -1,0 +1,8 @@
+{
+	"getStartAndCareer":"http://10.52.200.36:8080/starts_jobs",
+	"getStartAndAge":"http://10.52.200.36:8080/starts_ages",
+	"getworklocaltion":"http://10.52.200.36:8080/workLocates",  
+	"gethomelocaltion":"http://10.52.200.36:8080/inhabitLocates",
+	"getproheatlocaltion":"http://10.52.200.36:8080/SaleLocates",
+	"getlastheatlocaltion":"http://10.52.200.36:8080/ForecastSaleLocates"
+}
