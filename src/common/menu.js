@@ -18,6 +18,10 @@ const menuData = [
         name: '热卖区域预测',
         path: 'hotsale',
       },
+      // {
+      //   name: 'TEST',
+      //   path: 'test',
+      // },
     ],
   },
 ];

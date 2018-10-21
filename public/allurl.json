@@ -1,8 +1,8 @@
 {
-	"getStartAndCareer":"http://10.52.200.36:8080/starts_jobs",
-	"getStartAndAge":"http://10.52.200.36:8080/starts_ages",
-	"getworklocaltion":"http://10.52.200.36:8080/workLocates",  
-	"gethomelocaltion":"http://10.52.200.36:8080/inhabitLocates",
-	"getproheatlocaltion":"http://10.52.200.36:8080/SaleLocates",
-	"getlastheatlocaltion":"http://10.52.200.36:8080/ForecastSaleLocates"
+	"getStartAndCareer":"http://10.52.200.36:8080/person/starts_jobs",
+	"getStartAndAge":"http://10.52.200.36:8080/person/starts_ages",
+	"getworklocaltion":"http://10.52.200.36:8080/person/locate/workLocates",  
+	"gethomelocaltion":"http://10.52.200.36:8080/person/locate/inhabitLocates",
+	"getproheatlocaltion":"http://10.52.200.36:8080/sale/SaleLocates",
+	"getlastheatlocaltion":"http://10.52.200.36:8080/sale/ForecastSaleLocates"
 }

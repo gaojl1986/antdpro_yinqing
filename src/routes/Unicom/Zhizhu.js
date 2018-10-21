@@ -12,6 +12,8 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/tooltip';
 import $ from 'jquery';
 import allurl from '../../../public/allurl.json';
+import { Input } from 'antd';
+const Search = Input.Search;
 
 var option={
 	  		title:{
@@ -31,6 +33,7 @@ var option={
 	  			center: [116.416534,39.911733],
 	  			zoom: 12,   //缩放比例
 	  			roam: true  //是否响应鼠标滚轮缩放
+
 	  		},
 	  		series:[{   //数据序列
 	  			
@@ -80,6 +83,34 @@ export default class Zhizhu extends React.Component {
     	optdata:option
     }
   }
+  //定位
+  setPlace=(value) => {
+		var url='http://api.map.baidu.com/geocoder/v2/?output=json&ak=FAavj8yvxkQq86aAgDEUOwHiru5LNMVI&address='+value;
+		$.ajax({
+            type:"GET",
+            url:url, //访问的链接
+            dataType:"jsonp",  //数据格式设置为jsonp
+            jsonp:"callback",  //Jquery生成验证参数的名称
+            success:function(data){  //成功的回调函数
+               if(data.status == '0'){
+					var lng = data.result.location.lng;
+					var lat = data.result.location.lat;
+					let opt=JSON.parse(JSON.stringify(this.state.optdata));
+					opt.bmap.center=[lng,lat];
+					opt.bmap.zoom=13;
+					this.setState({
+						optdata:opt
+					});
+				}else{
+					alert('地址不正确');
+				}	
+            }.bind(this),
+            error: function (e) {
+                alert("error");
+            }.bind(this)
+        });
+  }
+  
   componentDidMount() {
   	//let url="public/data.json";
   	//let url='http://10.52.200.36:8080/workLocates';
@@ -120,11 +151,20 @@ export default class Zhizhu extends React.Component {
   render() {
     return (
     	<div>
-
-      	<ReactEcharts 
-			option={this.state.optdata}
-			style={{height:'600px',width:'100%'}}
-		/>
+    		<div style={{width:'50%',margin:'0 auto'}}>
+				<Search
+				  
+			      placeholder="请输入地名"
+			      enterButton="搜索"
+			      size="large"
+			      onSearch={value => this.setPlace(value)}
+			    />
+			</div>
+			<br/>
+	      	<ReactEcharts 
+				option={this.state.optdata}
+				style={{height:'600px',width:'100%'}}
+			/>
 		</div>
     );
   }

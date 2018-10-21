@@ -105,6 +105,9 @@ export const getRouterData = app => {
     '/unicom/hotsale': {
       component: dynamicWrapper(app, [], () => import('../routes/Unicom/Hotsales')),
     },
+    '/unicom/test': {
+      component: dynamicWrapper(app, [], () => import('../routes/Unicom/zhizhuokv1.js')),
+    },
 
     // 添加路由gaojl结束
 //------------------------------------------------------------------------------------------------------
